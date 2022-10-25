@@ -1,0 +1,42 @@
+esphome:
+    name: basementstairs
+  
+  esp32:
+    board: mhetesp32devkit
+    framework:
+      type: arduino
+  
+  # Enable logging
+  logger:
+  
+  # Enable Home Assistant API
+  api:
+    password: ""
+  
+  ota:
+    password: ""
+  
+  wifi:
+    ssid: "Emgland"
+    password: "Gjqxe5jfcTpZ8Lm"
+  
+    # Enable fallback hotspot (captive portal) in case wifi connection fails
+    ap:
+      ssid: "Basement Stairs Hotspot"
+      password: "Gjqxe5jfcTpZ8Lm"
+  
+  captive_portal:
+   
+  # Example configuration entry
+  servo:
+    - id: my_servo
+      output: pwm_output
+  
+  # Example output platform
+  # On ESP32, use ledc output
+  output:
+    - platform: ledc
+      id: pwm_output
+      pin: 16
+      frequency: 50 Hz
+  
